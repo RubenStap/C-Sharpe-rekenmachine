@@ -1,23 +1,41 @@
 ﻿// See https://aka.ms/new-console-template for more information
-class Program
+Console.WriteLine("Operatie?");
+string operatie = Console.ReadLine();
+
+Console.WriteLine("Eerste getal?");
+float getal1 = float.Parse(Console.ReadLine());
+
+Console.WriteLine("Tweede getal?");
+float getal2 = float.Parse(Console.ReadLine());
+
+if (operatie == "/")
 {
-    public static int keer(int getala, int getalb)
+    if (getal2 == 0)
     {
-        return getala * getalb;
+        Console.WriteLine("Je kan niet delen door 0.");
     }
-    public static void Main()
+    else
     {
-        Console.WriteLine("Getal a: ");
-        int getala = int.Parse(Console.ReadLine());
-        Console.WriteLine("Getal b: ");
-        int getalb = int.Parse(Console.ReadLine());
-
-        int resutaat = keer(getala, getalb);
-
-        Console.WriteLine("a x b = " + resutaat);
-
+        Console.WriteLine("Resultaat: " + getal1 / getal2);
     }
-
-
-
+}
+else if (operatie == "*")
+{
+    Console.WriteLine("Resultaat: " + getal1 * getal2);
+}
+else if (operatie == "-")
+{
+    Console.WriteLine("Resultaat: " + (getal1 - getal2));
+}
+else if (operatie == "+")
+{
+    Console.WriteLine("Resultaat: " + (getal1 + getal2));
+}
+else if (operatie == "%")
+{
+    Console.WriteLine("Resultaat: " + getal1 % getal2);
+}
+else
+{
+    Console.WriteLine("Ongeldige operatie.");
 }
